@@ -47,7 +47,7 @@
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -80,22 +80,30 @@ h1 {
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
 }
 
-.input-ground-append:active {
-    box-shadow: 5px var(--blue);
+.input-ground-append:hover {
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(13, 179, 121, 0.94); 
+box-shadow: 0px 0px 13px 2px rgba(8, 180, 117, 0.94);
+border: 1px solid var(--green);
 }
 
 .input {
     width: 80%;
     height: 100%;
     /* border-radius: 0.25rem 0 0 0.25rem;*/
-    border: 1px solid var(--mainGreen);
+        border: 1px solid var(--mainGreen);
     display: flex;
     padding-left: 20px;
     font-size: 14px;
     font-weight: 500;
     background-color: white;
+    pointer-events: ;
+}
+.input:active{
+    
+    border: 1px solid var(--mainGreen);
 }
 
 
@@ -119,21 +127,29 @@ h1 {
 
 .container .item {
     width: 500px;
-    height: auto;
-    background-color: #ced4da;
-    margin-top: 40px;
+    height:60px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px 0px 20px 20px;
+    border: 3px solid var(--gray);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .item-name {
     font-size: 22px;
     font-weight: bold;
+    
 }
 
 .icons {
     display: flex;
     gap: 15px;
+    margin-right: 20px;
 }
 
 i {
@@ -155,3 +171,4 @@ i {
     color: black;
     background-color: var(--mainGreen);
 }
+

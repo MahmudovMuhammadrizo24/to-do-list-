@@ -106,7 +106,12 @@ h1 {
     border: 1px solid var(--mainGreen);
 }
 
-
+.active{
+    text-decoration: line-through;
+    color: blue;
+    pointer-events: none;
+    
+}
 
 .add_item_btn {
     width: 20%;
@@ -165,6 +170,8 @@ i {
     margin-top: 40px;
     border: 1px solid var(--mainGreen);
     color: var(--mainGreen);
+    margin-left: 45%;
+    
 }
 
 .clear-item:hover {

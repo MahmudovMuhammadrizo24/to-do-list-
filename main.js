@@ -136,6 +136,7 @@ const clearBtn = document.querySelector('.clear-item');
 clearBtn.addEventListener('click', clearItems);
 */
 
+
 const input = document.querySelector('.input');
 const addBtn = document.querySelector('.add_item_btn');
 const container = document.querySelector('.container');
@@ -160,15 +161,14 @@ function addItem() {
     iconsContainer.classList.add('icons');
 
     const liner = createIcon('fa-check-circle', '#80cfa9', () => {
-        itemName.style.textDecoration = 'line-through';
-        newItem.style.color = 'blue';
-        newItem.style.pointerEvents = 'none';
+        itemName.classList.toggle("active");
+
+        //   itemName.style.textDecoration = 'line-through';
+        //   newItem.style.color = 'blue';
+        // newItem.style.pointerEvents = 'none';
     });
 
-    // Add double-click event listener to task name
-    itemName.addEventListener('dblclick', function () {
-        itemName.style.textDecoration = "line-through";
-    });
+
 
     const edit = createIcon('fa-edit', '#007bff', () => {
         input.value = itemName.textContent;
@@ -200,7 +200,7 @@ function createIcon(iconClass, color, clickHandler) {
 }
 
 function clearItems() {
-    container.innerHTML = '';
+    newItem.innerHTML = '';
     localStorage.removeItem('items');
 }
 
@@ -219,15 +219,13 @@ window.onload = function () {
         iconsContainer.classList.add('icons');
 
         const liner = createIcon('fa-check-circle', '#80cfa9', () => {
-            itemName.style.textDecoration = 'line-through';
-            newItem.style.color = 'blue';
-            newItem.style.pointerEvents = 'none';
+            /*   itemName.style.textDecoration = 'line-through';
+               newItem.style.color = 'blue';
+               newItem.style.pointerEvents = 'none';*/
+            itemName.classList.toggle("active");
         });
 
-        // Add double-click event listener to task name
-        itemName.addEventListener('dblclick', function () {
-            itemName.style.textDecoration = "line-through";
-        });
+
 
         const edit = createIcon('fa-edit', '#007bff', () => {
             input.value = itemName.textContent;
